@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+     app: mario
+  name: mario
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+       app: mario
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+         app: mario
+    spec:
+      containers:
+      - image: docker.io/pengbai/docker-supermario
+        name: mario
+        resources: {}
+      nodeSelector:
+       type: production
+status: {}
